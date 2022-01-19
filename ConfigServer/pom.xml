@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.gurja.infnet</groupId>
 	<artifactId>ConfigServer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>ConfigServer</name>
-	<description>configServer, Eureka Server and More</description>
+	<description>ConfigServer for Spring boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>

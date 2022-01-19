@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -f ConfigServer/pom.xml -B -DskipTests clean package'
+                sh 'mvn -f ConfigServer/pom.xml -DoutputDirectory=~/configServer -B -DskipTests clean package'
+                
             }
         }
         stage('Deploy') { 
             steps {
-                echo 'Hello Big World' 
+            	// sh 'pm2 delete configServer'
+                // sh '~/./runConfigServer.sh'
             }
         }
     }
