@@ -11,8 +11,15 @@ pipeline {
             steps {
 				// sh 'PM2_HOME=\'/home/ubuntu/.pm2\' pm2 delete configServer'
             	dir('/home/ubuntu/') {
+            		echo 'Destruindo instancia atual e apagando .jar'
+            		sh './destroyConfigServer.sh'
+            		echo 'Instancia destruida'
+            		echo 'Copiando .jar novo para pasta definitiva'
             		sh 'cp /var/lib/jenkins/workspace/Config-server/ConfigServer/target/ConfigServer*.jar /home/ubuntu/configServer/configServer.jar'
+            		echo 'Jar copiado com sucesso'
+            		echo 'Subindo instancia nova'
 					sh './runConfigServer.sh'
+					echo 'Instancia nova executada com sucesso'
 				}
             }
         }
