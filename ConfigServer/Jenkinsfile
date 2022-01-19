@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-            	dir('/home/ubuntu') {
+            	dir('/home/ubuntu/') {
 					sh 'pm2 delete configServer'
 					sh './runConfigServer.sh'
 				}
