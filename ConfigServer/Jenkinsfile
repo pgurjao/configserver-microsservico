@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
+            	echo 'Teste'
             	// sh 'pm2 delete configServer'
                 // sh '~/./runConfigServer.sh'
             }
