@@ -3,13 +3,21 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn --version'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Deploy') { 
             steps {
                 echo 'Hello Big World' 
             }
+        }
+    }
+    post {
+		success {
+			echo 'Esteira finalizada com sucesso!'
+        }
+		failure {
+			echo 'Esteira falhou...'
         }
     }
 }
